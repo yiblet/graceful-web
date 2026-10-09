@@ -18,9 +18,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="canvas">
+      <svg class="hero-star" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+        <path d="M100 32V168M41 66L159 134M41 134L159 66" stroke="currentColor" stroke-width="32" stroke-linecap="round" />
+      </svg>
       <header class="header">
         <a class="wordmark" href={`${base}/`} aria-label="Graceful Intelligence home">
-          <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M21 7a10 10 0 1 0 1 13v-6h-8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="5" r="1.7" fill="currentColor"/></svg>
+          <svg class="brand-mark" width="28" height="28" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 32V168M41 66L159 134M41 134L159 66" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" /></svg>
           <span>graceful<span class="wordmark-secondary">intelligence</span></span>
         </a>
         <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
@@ -28,9 +31,6 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       <main id="main">
         <section class="intro" aria-labelledby="headline">
-          <svg class="hero-star" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
-            <path d="M100 32V168M41 66L159 134M41 134L159 66" stroke="currentColor" stroke-width="32" stroke-linecap="round" />
-          </svg>
           <div class="hero-content">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Human values. Artificial intelligence.</p>
           <h1 id="headline">Intelligence,<br />with <em>integrity.</em></h1>
@@ -45,14 +45,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <p>We started Graceful Intelligence because we believe this deserves more care. We want to build apps that bring the capabilities of AI into everyday life, with the person using them at the center of decisions. A health app, for example, should help you understand a pattern while being honest about what that pattern can tell you.</p>
             <p>We are still working out how to earn that trust. Our starting point is to explain things plainly, acknowledge uncertainty, and give people control over their information and choices. We intend to hold ourselves to those principles as we build, and to listen when we fall short.</p>
             <p>Graceful is the feeling we hope our software gives you: enough clarity to know where you stand, and enough confidence to look up and consider what comes next. We want to make things that deserve a place in your life. That takes care, every day.</p>
-          </div>
-        </section>
-
-        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
-          <h2 id="contact-heading">Get in touch</h2>
-          <div class="contact">
-            <button class="contact-button" type="button">Contact us <span aria-hidden="true">↗</span></button>
-            <noscript><p class="contact-note">Enable JavaScript to open an email to us.</p></noscript>
+            <div id="contact" class="contact">
+              <button class="contact-button" type="button">Contact us <span aria-hidden="true">↗</span></button>
+              <noscript><p class="contact-note">Enable JavaScript to open an email to us.</p></noscript>
+            </div>
           </div>
         </section>
       </main>
