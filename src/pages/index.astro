@@ -18,9 +18,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <div class="canvas">
-      <svg class="hero-star" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
-        <path d="M100 32V168M41 66L159 134M41 134L159 66" stroke="currentColor" stroke-width="32" stroke-linecap="round" />
-      </svg>
+      <canvas class="fern-background" aria-hidden="true"></canvas>
       <header class="header">
         <a class="wordmark" href={`${base}/`} aria-label="Graceful Intelligence home">
           <svg class="brand-mark" width="28" height="28" viewBox="0 0 200 200" aria-hidden="true"><path d="M100 32V168M41 66L159 134M41 134L159 66" fill="none" stroke="currentColor" stroke-width="32" stroke-linecap="round" /></svg>
@@ -58,6 +56,10 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
       </footer>
     </div>
     <script>
+      import { growFern } from '../scripts/fern';
+      const fern = document.querySelector<HTMLCanvasElement>('.fern-background');
+      if (fern) growFern(fern);
+
       const button = document.querySelector<HTMLButtonElement>('button.contact-button');
       button?.addEventListener('click', () => {
         // Decode only on interaction; keep the address out of the HTML and string literals.
