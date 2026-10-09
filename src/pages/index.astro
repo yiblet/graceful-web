@@ -28,15 +28,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
       <main id="main">
         <section class="intro" aria-labelledby="headline">
-          <span class="hero-star" aria-hidden="true">✳</span>
+          <svg class="hero-star" viewBox="0 0 200 200" fill="none" aria-hidden="true" focusable="false">
+            <path d="M100 32V168M41 66L159 134M41 134L159 66" stroke="currentColor" stroke-width="32" stroke-linecap="round" />
+          </svg>
           <div class="hero-content">
           <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Human values. Artificial intelligence.</p>
           <h1 id="headline">Intelligence,<br />with <em>integrity.</em></h1>
           <p class="hero-description">We’re building AI apps for everyday life.<br class="desktop-break" /> Your trust matters to us.</p>
-          <div id="contact" class="contact">
-            <button class="contact-button" type="button">Contact us <span aria-hidden="true">↗</span></button>
-            <noscript><p class="contact-note">Enable JavaScript to open an email to us.</p></noscript>
-          </div>
           </div>
         </section>
 
@@ -47,6 +45,14 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
             <p>We started Graceful Intelligence because we believe this deserves more care. We want to build apps that bring the capabilities of AI into everyday life, with the person using them at the center of decisions. A health app, for example, should help you understand a pattern while being honest about what that pattern can tell you.</p>
             <p>We are still working out how to earn that trust. Our starting point is to explain things plainly, acknowledge uncertainty, and give people control over their information and choices. We intend to hold ourselves to those principles as we build, and to listen when we fall short.</p>
             <p>Graceful is the feeling we hope our software gives you: enough clarity to know where you stand, and enough confidence to look up and consider what comes next. We want to make things that deserve a place in your life. That takes care, every day.</p>
+          </div>
+        </section>
+
+        <section id="contact" class="contact-section" aria-labelledby="contact-heading">
+          <h2 id="contact-heading">Get in touch</h2>
+          <div class="contact">
+            <button class="contact-button" type="button">Contact us <span aria-hidden="true">↗</span></button>
+            <noscript><p class="contact-note">Enable JavaScript to open an email to us.</p></noscript>
           </div>
         </section>
       </main>
