@@ -9,9 +9,7 @@ button { font: inherit; }
 :focus-visible { outline: 2px solid #707639; outline-offset: 6px; }
 .skip-link { position: fixed; top: -80px; left: 20px; padding: 12px; background: #f2eee4; z-index: 10; }
 .skip-link:focus { top: 20px; }
-.canvas { min-height: 900px; min-height: max(900px, 100svh); position: relative; overflow: hidden; display: flex; flex-direction: column; }
-.fresco { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 58%; z-index: 0; opacity: .72; }
-.wash { position: absolute; inset: 0; background: linear-gradient(180deg, #f2eee4 0%, rgba(242,238,228,.95) 38%, rgba(242,238,228,.18) 70%, rgba(242,238,228,.68) 100%); z-index: 1; }
+.canvas { min-height: 100svh; position: relative; overflow: hidden; display: flex; flex-direction: column; }
 .header, main, .footer { position: relative; z-index: 2; }
 .header { padding: 37px 5%; display: flex; align-items: center; justify-content: space-between; }
 .wordmark { display: flex; gap: 12px; align-items: center; font-family: 'Manrope', sans-serif; font-size: 24px; font-weight: 600; letter-spacing: -.9px; line-height: 1; }
@@ -19,39 +17,41 @@ button { font: inherit; }
 .nav-contact { font-size: 13px; padding-bottom: 8px; border-bottom: 1px solid #9b9c8b; display: flex; align-items: center; gap: 24px; }
 .nav-contact span { font-size: 18px; }
 main { flex: 1; display: flex; flex-direction: column; }
-.intro { padding: 53px 24px 0; text-align: center; }
+.intro { position: relative; isolation: isolate; min-height: max(620px, calc(100svh - 116px)); padding: 70px 24px 130px; display: grid; place-items: center; text-align: center; overflow: hidden; }
+.hero-content { position: relative; z-index: 1; }
+.hero-star { position: absolute; right: -10vw; top: 50%; margin-top: -.5em; width: 1em; height: 1em; display: grid; place-items: center; font-family: 'Arial', sans-serif; font-size: clamp(420px, 64vw, 1100px); line-height: 1; color: #7a803e; opacity: .09; pointer-events: none; user-select: none; transform-origin: center; animation: star-settle 14s cubic-bezier(.2, .4, .3, 1) both; }
+@keyframes star-settle { from { transform: rotate(-120deg); } to { transform: rotate(0deg); } }
 .eyebrow { font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase; display: flex; align-items: center; justify-content: center; gap: 9px; margin: 0 0 25px; }
 .status-dot { width: 5px; height: 5px; background: #7a803e; border-radius: 50%; }
 h1 { font-family: Georgia, 'Times New Roman', serif; font-weight: 400; font-size: clamp(64px, 7.3vw, 108px); letter-spacing: -5px; line-height: .98; margin: 0; }
 h1 em { font-weight: 400; color: #70763e; }
-.thesis { font-size: 15px; line-height: 1.8; margin: 26px 0 23px; color: #55584d; }
+.hero-description { font-size: 15px; line-height: 1.8; margin: 26px 0 23px; color: #55584d; }
 .contact { scroll-margin-top: 28px; }
 .contact-button { display: inline-flex; justify-content: space-between; align-items: center; gap: 38px; padding: 15px 21px; border: 1px solid #30372a; background: #30372a; color: #faf7ed; border-radius: 3px; cursor: pointer; font-size: 12px; transition: background .2s, transform .2s; }
 .contact-button:hover { background: #50583a; transform: translateY(-2px); }
 .contact-button span { font-size: 19px; line-height: 1; }
 .contact-note { font-size: 11px; color: #56594c; margin: 14px 0 0; }
-.art-caption { margin-top: auto; padding: 140px 5% 28px; display: flex; align-items: center; gap: 13px; font-family: Georgia, serif; font-size: 14px; font-style: italic; color: #454736; }
-.caption-line { height: 1px; width: 32px; background: currentColor; }
-.coordinates { margin-left: auto; font-family: 'DM Sans', sans-serif; font-style: normal; font-size: 10px; letter-spacing: 2px; }
+.our-thesis { width: 90%; max-width: 1120px; margin: 0 auto; padding: 90px 0 110px; border-top: 1px solid rgba(76,79,61,.25); display: grid; grid-template-columns: 1fr 2fr; gap: 60px; }
+.our-thesis h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 38px; line-height: 1.2; letter-spacing: -1px; font-weight: 400; margin: 0; }
+.thesis-copy { max-width: 640px; font-size: 17px; line-height: 1.85; color: #45483e; }
+.thesis-copy p { margin: 0 0 24px; }
+.thesis-copy p:last-child { margin-bottom: 0; }
 .footer { margin: 0 5%; padding: 23px 0 27px; border-top: 1px solid rgba(76,79,61,.25); display: flex; align-items: center; justify-content: space-between; gap: 20px; font-size: 10px; color: #555848; }
 .footer p { margin: 0; }
-.footer-symbol { font-size: 22px; }
-@media (min-width: 1600px) { .canvas { min-height: 100svh; } .intro { padding-top: 7vh; } }
 @media (max-width: 700px) {
-  .canvas { min-height: max(800px, 100svh); }
   .header { padding: 25px 6%; }
   .wordmark { font-size: 21px; gap: 9px; }
   .wordmark-secondary { font-size: 8px; }
   .nav-contact { font-size: 11px; gap: 12px; }
-  .intro { padding-top: 66px; }
+  .intro { min-height: max(590px, calc(100svh - 96px)); padding: 66px 24px 110px; }
+  .hero-star { right: -140px; font-size: max(420px, 90vw); }
   .eyebrow { font-size: 8px; letter-spacing: 1.4px; margin-bottom: 28px; }
   h1 { font-size: clamp(60px, 12vw, 82px); letter-spacing: -3px; }
-  .thesis { font-size: 13px; max-width: 290px; margin: 26px auto 24px; }
+  .hero-description { font-size: 13px; max-width: 290px; margin: 26px auto 24px; }
   .desktop-break { display: none; }
-  .fresco { object-position: 54% bottom; }
-  .wash { background: linear-gradient(180deg, #f2eee4, rgba(242,238,228,.95) 48%, rgba(242,238,228,.24) 73%, rgba(242,238,228,.8)); }
-  .art-caption { padding: 150px 6% 25px; font-size: 13px; }
+  .our-thesis { width: 88%; padding: 55px 0 70px; grid-template-columns: 1fr; gap: 28px; }
+  .our-thesis h2 { font-size: 32px; }
+  .thesis-copy { font-size: 15px; line-height: 1.85; }
   .footer { margin: 0 6%; font-size: 9px; padding: 20px 0; }
-  .footer-thesis { display: none; }
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
