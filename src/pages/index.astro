@@ -1,0 +1,61 @@
+---
+import '../styles/global.css';
+const year = new Date().getFullYear();
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#f2eee4" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="description" content="Graceful Intelligence. Thoughtful AI applications for people who value truth and trust." />
+    <title>Graceful Intelligence — Built on trust.</title>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="canvas">
+      <div class="wash" aria-hidden="true"></div>
+      <header class="header">
+        <a class="wordmark" href={`${base}/`} aria-label="Graceful Intelligence home">
+          <svg class="brand-mark" width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M21 7a10 10 0 1 0 1 13v-6h-8" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="24" cy="5" r="1.7" fill="currentColor"/></svg>
+          <span>graceful<span class="wordmark-secondary">intelligence</span></span>
+        </a>
+        <a class="nav-contact" href="#contact">Get in touch <span aria-hidden="true">↗</span></a>
+      </header>
+
+      <main id="main">
+        <section class="intro" aria-labelledby="headline">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span> Human values. Artificial intelligence.</p>
+          <h1 id="headline">Intelligence,<br />with <em>integrity.</em></h1>
+          <p class="thesis">We’re building apps for people who mean what they say.<br class="desktop-break" /> Truthful by design. Trustworthy by nature.</p>
+          <div id="contact" class="contact">
+            <button class="contact-button" type="button">Contact us <span aria-hidden="true">↗</span></button>
+            <p class="contact-note">Good things start with an honest conversation.</p>
+            <noscript><p class="contact-note">Enable JavaScript to open an email to us.</p></noscript>
+          </div>
+        </section>
+
+        <div class="art-caption" aria-hidden="true"><span class="caption-line"></span><span>A little more human.</span><span class="coordinates">01 / ∞</span></div>
+      </main>
+
+      <footer class="footer">
+        <p>© {year} Graceful Intelligence</p>
+        <p class="footer-thesis">Made of curiosity. Built on trust.</p>
+        <span class="footer-symbol" aria-hidden="true">✳</span>
+      </footer>
+    </div>
+    <script>
+      const button = document.querySelector<HTMLButtonElement>('button.contact-button');
+      button?.addEventListener('click', () => {
+        // Decode only on interaction; keep the address out of the HTML and string literals.
+        const recipient = [52, 33, 50, 48, 54, 53, 38, 63, 58, 61, 39, 54, 63, 63, 58, 52, 54, 61, 48, 54, 19, 60, 38, 39, 63, 60, 60, 56, 125, 48, 60, 62]
+          .map(value => String.fromCharCode(value ^ 83)).join('');
+        window.location.href = `mailto:${recipient}`;
+      });
+    </script>
+  </body>
+</html>
